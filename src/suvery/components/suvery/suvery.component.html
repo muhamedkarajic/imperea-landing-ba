@@ -1,0 +1,47 @@
+
+
+
+
+
+
+
+
+<div [hidden]="!suveryHidden" *ngIf="suveryContent$ | async as suveryContent" class="margin-20">
+  <h1>{{ suveryContent.surveyName }}</h1>
+  <h4>{{ suveryContent.surveyDescription }}</h4>
+
+  <h3>{{ suveryContent.surveyFields[index].fieldValue }}</h3>
+  <mat-progress-bar
+    #progresbar
+    mode="determinate"
+    [value]="progres"
+  ></mat-progress-bar>
+
+  <div *ngFor="let surveyField of suveryContent.surveyFields; let i = index">
+    <suvery-fields
+      [hidden]="i !=index"
+      [surveyFields]="surveyField.inverseParent"
+    ></suvery-fields>
+  </div>
+
+  <br />
+  <br />
+  <br />
+  <button class="btn mr-2" *ngIf="index > 1" (click)="decrement()">
+    Zurück
+  </button>
+  <button
+    class="btn ml-2"
+    *ngIf="index < suveryCategoriesCount"
+    (click)="increment()"
+  >
+    Weiter
+  </button>
+  <button
+    class="btn ml-2"
+    *ngIf="index == suveryCategoriesCount"
+    (click)="submit()"
+  >
+    Speichern
+  </button>
+</div>

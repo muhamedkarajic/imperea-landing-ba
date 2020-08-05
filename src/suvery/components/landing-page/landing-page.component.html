@@ -1,0 +1,413 @@
+<div [hidden]="hideMenu" id="menu-bar">
+  <div class="options">
+    <div>
+      <span class="option">
+        About Us
+      </span>
+    </div>
+
+    <div>
+      <span class="option">
+        Services
+      </span>
+    </div>
+    <div>
+      <span class="option" (click)="surveyActivate()">
+        Partners
+      </span>
+    </div>
+    <div>
+      <span class="option">
+        Trending stories
+      </span>
+    </div>
+    <div>
+      <span class="option">
+        Contact us
+      </span>
+    </div>
+  </div>
+  <div id="x-icon" (click)="toggleMenu()">
+    <img src="./assets/images/close.svg" alt="" />
+  </div>
+</div>
+
+<main id="hero">
+  <div id="menu" (click)="toggleMenu()">
+    <img src="./assets/images/menu.svg" alt="" />
+  </div>
+  <img class="bg-img" src="assets/images/cover.png" alt="img" />
+  <div class="top">
+    <div>
+      <img class="logo" src="./assets/images/Logo.svg" alt="" />
+    </div>
+    <div class="info">
+      <div class="title">Call us:</div>
+      <div class="description">0400 000 000</div>
+    </div>
+    <div class="info">
+      <div class="title">E-mail us:</div>
+      <div class="description">hello@itsme.com.au</div>
+    </div>
+    <div></div>
+  </div>
+  <div class="bottom">
+    <h1 class="bottom-left">hello...</h1>
+    <div>
+      <img src="./assets/images/itsme.svg" alt="" />
+    </div>
+  </div>
+</main>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="wrapper">
+  <div id="about">
+    <div class="overview md-only">
+      <div>
+        <img src="assets/images/bg.svg" alt="img" />
+
+        <div class="card-circle">
+          <div class="card-item">
+            <span class="number">5</span
+            ><span class="description">Years of exprience</span>
+          </div>
+          <div class="card-double">
+            <div class="card-item">
+              <span class="number">269</span
+              ><span class="description">Project Delivered</span>
+            </div>
+            <div class="card-item">
+              <span class="number">269</span
+              ><span class="description">Happy Clients</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="details">
+      <h5>WHO WE ARE</h5>
+      <h1>About us</h1>
+      <h4>We are developing quality product for 5 years.</h4>
+      <p>
+        Using Technology to deliver information to Small/Medium enterprises
+        (less than 200 staff) Targeting SME which make up 98% of All Australian
+        businesses. They employ roughly 4.7 Million Australians. They Represent
+        90% of Good exports and 60% of service exporters.
+      </p>
+      <br />
+      <br />
+      <div class="overview md-less">
+        <div>
+          <img src="assets/images/bg.svg" alt="img" />
+
+          <div class="card-circle">
+            <div class="card-item">
+              <span class="number">5</span
+              ><span class="description">Years of exprience</span>
+            </div>
+            <div class="card-double">
+              <div class="card-item">
+                <span class="number">269</span
+                ><span class="description">Project Delivered</span>
+              </div>
+              <div class="card-item">
+                <span class="number">269</span
+                ><span class="description">Happy Clients</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button>HIRE US</button>
+    </div>
+  </div>
+
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <div class="wrapper">
+    <div class="sponsors">
+      <img class="special-bg" src="assets/images/bg.svg" />
+
+      <div>
+        <img src="assets/images/acer.png" />
+      </div>
+      <div>
+        <img src="assets/images/samsung.png" />
+      </div>
+      <div>
+        <img src="assets/images/dell.png" />
+      </div>
+      <div>
+        <img src="assets/images/acer.png" />
+      </div>
+      <div>
+        <img src="assets/images/hp.png" />
+      </div>
+      <div>
+        <img src="assets/images/samsung.png" />
+      </div>
+      <div>
+        <img src="assets/images/dell.png" />
+      </div>
+    </div>
+  </div>
+
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <div class="wrapper">
+    <div class="services">
+      <h5>WHAT WE DO</h5>
+      <h1>Provided sevices</h1>
+      <div class="services-list">
+        <div class="service">
+          <div class="service-img">
+            <img src="assets/images/Support.svg" />
+          </div>
+          <div class="dots"></div>
+
+          <h4>Support</h4>
+          <p>- General User Support</p>
+          <p>- Online Support</p>
+        </div>
+        <div class="service">
+          <div class="service-img">
+            <img src="assets/images/Protection.svg" />
+          </div>
+          <div class="dots"></div>
+
+          <h4>Protection</h4>
+          <p>- Device Security</p>
+          <p>- Email Security</p>
+          <p>- Data Security</p>
+          <p>- Intrusion Prevention</p>
+          <p>- Business Continuity</p>
+        </div>
+        <div class="service">
+          <div class="service-img">
+            <img src="assets/images/Management.svg" />
+          </div>
+          <div class="dots"></div>
+
+          <h4>Management</h4>
+          <p>- 24/7 Server / Network / Application Monitoring</p>
+          <p>- Quarterly Business Reviews</p>
+          <p>- User Satisfaction Reviews</p>
+          <p>- IT Document Management</p>
+        </div>
+
+        <div class="service">
+          <div class="service-img">
+            <img src="assets/images/Design.svg" />
+          </div>
+          <div class="dots"></div>
+
+          <h4>Design</h4>
+          <p>- Strategic Consulting</p>
+          <p>- Solution Design</p>
+          <p>- Project Services</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<div id="story-bg">
+  <div class="wrapper">
+    <div id="stories">
+      <div class="overview lg-only">
+        <div class="story">
+          <img src="assets/images/1.png" />
+          <div class="card-bottom">
+            <h6 class="title">
+              Big data helps predict dangerous storm conditions
+            </h6>
+            <p class="text">
+              How much easier life would be after a storm if insurance companies
+              stopped haggling over wind versus water…
+            </p>
+          </div>
+        </div>
+        <div class="story">
+          <img src="assets/images/2.png" />
+          <div class="card-bottom">
+            <h6 class="title">
+              Big data helps predict dangerous storm conditions
+            </h6>
+            <p class="text">
+              How much easier life would be after a storm if insurance companies
+              stopped haggling over wind versus water…
+            </p>
+          </div>
+        </div>
+        <div class="story">
+          <img src="assets/images/3.png" />
+          <div class="card-bottom">
+            <h6 class="title">
+              Big data helps predict dangerous storm conditions
+            </h6>
+            <p class="text">
+              How much easier life would be after a storm if insurance companies
+              stopped haggling over wind versus water…
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="details">
+        <h5>CHECK OUT OUR LATEST STORIES</h5>
+        <h1>Trending stories</h1>
+        <h4>
+          We do try our best to stay relevant and helpful. Explore our latest
+          stories.
+        </h4>
+        <p>
+          Using Technology to deliver information to Small/Medium enterprises
+          (less than 200 staff) Targeting SME which make up 98% of All
+          Australian businesses. They employ roughly 4.7 Million Australians.
+          They Represent 90% of Good exports and 60% of service exporters.
+        </p>
+        <div class="overview lg-less">
+          <div class="story">
+            <img src="assets/images/1.png" />
+            <div class="card-bottom">
+              <h6 class="title">
+                Big data helps predict dangerous storm conditions
+              </h6>
+              <p class="text">
+                How much easier life would be after a storm if insurance
+                companies stopped haggling over wind versus water…
+              </p>
+            </div>
+          </div>
+          <div class="story">
+            <img src="assets/images/2.png" />
+            <div class="card-bottom">
+              <h6 class="title">
+                Big data helps predict dangerous storm conditions
+              </h6>
+              <p class="text">
+                How much easier life would be after a storm if insurance
+                companies stopped haggling over wind versus water…
+              </p>
+            </div>
+          </div>
+          <div class="story">
+            <img src="assets/images/3.png" />
+            <div class="card-bottom">
+              <h6 class="title">
+                Big data helps predict dangerous storm conditions
+              </h6>
+              <p class="text">
+                How much easier life would be after a storm if insurance
+                companies stopped haggling over wind versus water…
+              </p>
+            </div>
+          </div>
+        </div>
+        <button>VIEW ALL</button>
+      </div>
+    </div>
+  </div>
+  <!-- <img class="image-icon" src="assets/images/bg.svg"> -->
+</div>
+
+<div id="around-footer">
+  <div class="card">
+    <img src="assets/images/man.png" />
+  </div>
+
+  <div id="footer-bg">
+    <div id="footer-wrapper">
+      <div id="stories">
+        <div class="details">
+          <br />
+          <br />
+          <h5>NEWSLETTER</h5>
+          <h1>Want to be always <span>informed</span>?</h1>
+          <div class="newsletter-form">
+            <input type="text" />
+            <button>SIGN UP</button>
+          </div>
+        </div>
+        <div class="overview">
+          <div class="story"></div>
+        </div>
+      </div>
+      <br />
+      <br />
+      <br />
+      <div class="hr"></div>
+      <br />
+      <br />
+      <br />
+      <div id="info">
+        <div class="contact-info">
+          <div class="title">SITEMAP</div>
+          <div class="details">
+            <p>About us</p>
+            <p>Services</p>
+            <p>Partners</p>
+            <p>Tranding stories</p>
+          </div>
+        </div>
+        <div class="contact-info">
+          <div class="title">SERVICES</div>
+          <div class="details">
+            <p>Support</p>
+            <p>Protection</p>
+            <p>Managment</p>
+            <p>Design</p>
+          </div>
+        </div>
+        <div class="contact-info">
+          <div class="title">CONTACT INFORMATION</div>
+          <div class="contact-content">
+            <div class="details">
+              <p>Call us:</p>
+              <div class="title">0400 000 000</div>
+              <p>E-mail us:</p>
+              <div class="title">hello@itsme.com.au</div>
+            </div>
+            <div class="details">
+              <p>Visit us:</p>
+              <div class="title">Location 1</div>
+              <p>Social media:</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+      <br />
+      <div class="hr"></div>
+
+      <br />
+      <br />
+      <br />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,126 @@
+<div
+  *ngIf="
+    surveyFields &&
+      surveyFields.length >= 1 &&
+      surveyFields[0].fieldType == 'DropDown';
+    else renderField
+  "
+>
+  <select [(ngModel)]="selectedFieldDropDown">
+    <option disabled selected value=null>Bitte auswählen</option>
+    <option *ngFor="let surveyField of surveyFields" [ngValue]="surveyField">
+      {{ surveyField.fieldValue }}
+    </option>
+  </select>
+
+  <suvery-fields *ngIf="selectedFieldDropDown"
+    [surveyFields]="selectedFieldDropDown.inverseParent"
+  ></suvery-fields>
+</div>
+
+<ng-template #renderField>
+  <div style="padding: 3px;" *ngFor="let surveyField of surveyFields">
+    <span [ngSwitch]="surveyField.fieldKind">
+      <div *ngSwitchCase="'Question'">
+        <br />
+        {{ surveyField.fieldValue }}
+
+
+
+
+        <span *ngIf="surveyField.inverseParent.length == 1 && surveyField.inverseParent[0].fieldType == 'Checkbox'; else elseBlock" >
+          <label class="container">
+            <input
+              type="checkbox"
+              [value]="surveyField.inverseParent[0].fieldValue"
+              [(ngModel)]="surveyField.inverseParent[0].checkBoxSelected"
+            />
+            <span class="checkmark"></span>
+          </label>
+          <span *ngIf="surveyField.inverseParent[0].fieldValue != 'Yes/No'">
+            {{ surveyField.inverseParent[0].fieldValue }}
+          </span>
+            <suvery-fields
+              *ngIf="surveyField.inverseParent[0].checkBoxSelected"
+              [surveyFields]="surveyField.inverseParent[0].inverseParent"
+            ></suvery-fields>
+        </span>
+        <ng-template #elseBlock>
+          <suvery-fields
+          [surveyFields]="surveyField.inverseParent"
+        ></suvery-fields>
+        </ng-template>
+
+      </div>
+
+      <div *ngSwitchCase="'Category'">
+        <h4>{{ surveyField.fieldValue }}</h4>
+        <suvery-fields
+          [surveyFields]="surveyField.inverseParent"
+        ></suvery-fields>
+      </div>
+      <div *ngSwitchCase="'FileUpload'">
+        <label for="files" class="btn">Select Image</label>
+        <input id="files" style="display: none;" type="file" />
+        <suvery-fields
+          [surveyFields]="surveyField.inverseParent"
+        ></suvery-fields>
+      </div>
+      <div *ngSwitchCase="'Header'">
+        <h3>{{ surveyField.fieldValue }}</h3>
+        <suvery-fields
+          [surveyFields]="surveyField.inverseParent"
+        ></suvery-fields>
+      </div>
+      <span *ngSwitchCase="'Answer'">
+        <span [ngSwitch]="surveyField.fieldType">
+          <span *ngSwitchCase="'Checkbox'">
+            <label class="container">
+              <input
+                type="checkbox"
+                [value]="surveyField.fieldValue"
+                [(ngModel)]="surveyField.checkBoxSelected"
+              />
+              <span class="checkmark"></span>
+            </label>
+            <span *ngIf="surveyField.fieldValue != 'Yes/No'">
+              {{ surveyField.fieldValue }}
+            </span>
+            <div style="padding-left: 20px;">
+              <suvery-fields
+                *ngIf="surveyField.checkBoxSelected"
+                [surveyFields]="surveyField.inverseParent"
+              ></suvery-fields>
+            </div>
+          </span>
+        </span>
+      </span>
+
+      <div *ngSwitchCase="'Text'">
+        <div [ngSwitch]="surveyField.fieldType">
+          <div *ngSwitchCase="'Notification'">
+            <span class="hint">
+              <mat-icon aria-hidden="false" aria-label="Example home icon"
+                >notifications</mat-icon
+              >{{ surveyField.fieldValue }}</span
+            >
+          </div>
+          <div *ngSwitchDefault>
+            <span>{{ surveyField.fieldValue }}</span>
+          </div>
+
+          <suvery-fields
+            [surveyFields]="surveyField.inverseParent"
+          ></suvery-fields>
+        </div>
+      </div>
+
+      <div *ngSwitchDefault>
+        {{ surveyField.fieldValue }}
+        {{ surveyField.fieldKind }}
+        {{ surveyField.fieldType }}
+        --- > could not render
+      </div>
+    </span>
+  </div>
+</ng-template>
